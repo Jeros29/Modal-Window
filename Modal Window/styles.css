@@ -1,0 +1,81 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.modal__button {
+    outline: none;
+    border: none;
+    background-color: #0AF;
+    color: #FFF;
+    padding: .5em .75em;
+    font-size: 2rem;
+    border-radius: .3em;
+}
+
+.modal__button:hover {
+    cursor: pointer;
+    background-color: #777;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.5);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.modal-content {
+    background-color: #FFF;
+    margin: 20% auto;
+    padding: 1em;
+    width: 35%;
+    box-shadow: -1em 1em 1em 0 rgba(0,0,0,0.5), 1em 1em 1em 0 rgba(0,0,0,0.5);
+    font-size: 1.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    animation-name: modalOpen;
+    animation-duration: .5s;
+}
+
+.closeBtn {
+    font-size: 2.25rem;
+    color: #BBB;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@keyframes modalOpen {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
